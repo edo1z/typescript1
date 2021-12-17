@@ -1,20 +1,15 @@
-type Point = {x:number, y:number};
-type P = keyof Point;
-const a:P = 'x';
-const b:P = 'y';
-// const c:P = 'z';
+///<reference path="Validation.ts" />
 
-function l<T>(x:T) {
-  console.log(`${x} is ${typeof x}`);
+// Some samples to try
+let strings = ["Hello", "98052", "101"];
+// Validators to use
+let validators: { [s: string]: Validation.StringValidator } = {};
+validators["ZIP code"] = new Validation.ZipCodeValidator();
+validators["Letters only"] = new Validation.LettersOnlyValidator();
+// Show whether each string passed each validator
+for (let s of strings) {
+  for (let name in validators) {
+    let isMatch = validators[name].isAcceptable(s);
+    console.log(`'${s}' ${isMatch ? "matches" : "does not match"} '${name}'.`);
+  }
 }
-
-l('hello');
-l({x:10, y:5});
-l(12);
-
-type Predicate = (x:unknown) => boolean;
-type K = ReturnType<Predicate>;
-const p1:Predicate = (x) => (!!x);
-const k:K = p1('hoge');
-l(p1);
-l(k);

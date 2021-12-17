@@ -1,0 +1,20 @@
+{
+  "name": "ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "rm -rf dist/* && tsc --outFile dist/index.js src/index.ts && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web3ten0/typescript1.git"
+  },
+  "author": "web3ten0",
+  "license": "MIT",
+  "types": "./index.d.ts",
+  "bugs": {
+    "url": "https://github.com/web3ten0/typescript1/issues"
+  },
+  "homepage": "https://github.com/web3ten0/typescript1#readme"
+}
