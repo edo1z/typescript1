@@ -1,10 +1,20 @@
-type a<T> = {
-    x: T,
-    y?: number
+type Point = {x:number, y:number};
+type P = keyof Point;
+const a:P = 'x';
+const b:P = 'y';
+// const c:P = 'z';
+
+function l<T>(x:T) {
+  console.log(`${x} is ${typeof x}`);
 }
-const a1:a<string> = {x:'hoge', y:12};
-function b<T>(arg: T): T {
-    return arg;
-}
-const a2 = b(12);
-console.log(a2);
+
+l('hello');
+l({x:10, y:5});
+l(12);
+
+type Predicate = (x:unknown) => boolean;
+type K = ReturnType<Predicate>;
+const p1:Predicate = (x) => (!!x);
+const k:K = p1('hoge');
+l(p1);
+l(k);
