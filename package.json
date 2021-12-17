@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run": "rm -rf dist/* && tsc --outFile dist/index.js src/index.ts && node dist/index.js"
+    "run": "rm -rf dist/* && tsc && node dist/index.js"
   },
   "repository": {
     "type": "git",

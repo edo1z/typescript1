@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",                                     /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    "module": "esnext",                                /* Specify what module code is generated. */
+    "module": "commonJs",                                /* Specify what module code is generated. */
     "strict": true,                                      /* Enable all strict type-checking options. */
     "jsx": "preserve",
     "moduleResolution": "node",
@@ -13,7 +13,8 @@
     "allowJs": true, 
     "checkJs": true,
     "noImplicitAny": true,
-    "declaration": true,
+    // "declaration": true,
+    "baseUrl": "./src",
   },
   "include": [
     "src/**/*"
